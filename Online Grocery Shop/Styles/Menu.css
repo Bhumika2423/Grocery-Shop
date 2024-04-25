@@ -1,0 +1,190 @@
+﻿.menuTemplate4 {
+    margin: 0 auto;
+    width: 898px;
+    float: left;
+    behavior: url("/horizontal/menuh/cssmenu.htc");
+    position: relative;
+    z-index: 4;
+    height: 36px;
+    background: #851010;
+    border: 1px solid #851010;
+    font-family: Arial, Helvetica, sans-serif;
+    list-style: none;
+    padding: 0;
+}
+    .menuTemplate4 .search {
+       
+        width:461px;
+        height:100%;
+        overflow:hidden;
+        z-index:5;
+        vertical-align:middle;
+        float:right;
+    }
+        
+        .menuTemplate4 .search .txtserach {
+            height:25px;
+            width:230px;
+            float:right;
+            margin-top:2px;
+        }
+        .menuTemplate4 .search .btnSearch {
+            border-style: none;
+    border-color: inherit;
+    border-width: medium;
+    margin-top:2px;
+            float:right;
+            color:white;
+            font-weight:bold;
+            background-color: #851010;
+            cursor:pointer;
+        }
+    .menuTemplate4 div {
+        box-sizing: content-box;
+    }
+
+    .menuTemplate4 li {
+        padding: 0;
+        float: left;
+        height: 36px;
+        position: relative; /*delete it if you want submenu to be positioned relative to the whole menu instead of this li element*/
+        color: black;
+        z-index: 5;
+    }
+
+        .menuTemplate4 li:hover, .menuTemplate4 li.onhover {
+            border-top: 1px solid #CC0000;
+        }
+
+    .menuTemplate4 a {
+        padding: 0 30px;
+        line-height: 35px; /*Note: keep this value the same as the height of .menuTemplate4 li */
+        font-size: 12px;
+        font-weight: bold;
+        display: inline-block;
+        outline: 0;
+        text-decoration: none;
+        color: white;
+        position: relative;
+    }
+
+    .menuTemplate4 li:hover a, .menuTemplate4 li.onhover a {
+        background-color: white;
+        color: #000;
+        z-index: 9;
+    }
+
+    .menuTemplate4 a.arrow {
+        background: url(arrow.gif) no-repeat right center;
+    }
+
+
+    /*Used to align a top-level item to the right*/
+    .menuTemplate4 li.menuRight {
+        float: right;
+        margin-right: 0px;
+    }
+
+    /*for the top-level separators*/
+    .menuTemplate4 li.separator {
+        display: none;
+    }
+
+
+    /* sub level
+--------------------------------------------*/
+
+    .menuTemplate4 .drop {
+        position: absolute;
+        z-index: 5;
+        left: -9999px;
+        border: 1px solid #DDD;
+        border-bottom: 3px solid #990000;
+        background: #FFF;
+        text-align: left;
+        padding: 20px;
+        color: #0F4F89;
+        top: 34px;
+    }
+
+        .menuTemplate4 .drop a {
+            padding-left: 0px;
+            padding-right: 0px;
+            line-height: 26px;
+            font-size: 12px;
+            font-weight: normal;
+            display: inline;
+            text-align: left;
+            position: static;
+            z-index: 0;
+            background-image: none;
+        }
+
+    .menuTemplate4 li:hover .drop, .menuTemplate4 li.onhover .drop {
+        left: -1px; /*Use this property to change offset of the dropdown*/
+        background: white url(bg-right.png) no-repeat right bottom;
+    }
+
+    .menuTemplate4 li:hover .dropToLeft, .menuTemplate4 li.onhover .dropToLeft {
+        left: auto;
+        right: -1px;
+        background: white url(bg-left.png) no-repeat 0 bottom;
+    }
+
+    .menuTemplate4 li:hover .dropToLeft2, .menuTemplate4 li.onhover .dropToLeft2 {
+        left: auto;
+        right: -60px;
+    }
+
+    /* Elements within the drop down sub-menu
+--------------------------------------------*/
+
+    .menuTemplate4 div.drop div div {
+        padding: 6px 20px;
+    }
+
+    .menuTemplate4 li:hover .drop a, .menuTemplate4 li.onhover .drop a {
+        background: none;
+        background-image: none;
+        padding: 0 0;
+    }
+
+    .menuTemplate4 div.drop div a {
+        line-height: 24px;
+        color: #0F4F89;
+        background: none;
+    }
+
+        .menuTemplate4 div.drop div a:hover {
+            text-decoration: underline;
+            cursor: pointer;
+            color: Red;
+        }
+
+    .menuTemplate4 div.left {
+        float: left;
+    }
+
+
+/* CSS3 effects
+--------------------------------------------*/
+
+/*for top-level*/
+.decor4_1 {
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -moz-box-shadow: 0px 1px 4px #999;
+    -webkit-box-shadow: 0px 1px 4px #999;
+    box-shadow: 0px 1px 4px #999;
+}
+
+/*for submenu.*/
+.decor4_2 {
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    -moz-box-shadow: 0 4px 10px #CCC;
+    -webkit-box-shadow: 0 4px 10px #CCC;
+    box-shadow: 0 4px 10px #CCC;
+}

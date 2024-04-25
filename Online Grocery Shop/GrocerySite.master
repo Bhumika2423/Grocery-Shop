@@ -1,0 +1,112 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="GrocerySite.master.cs" Inherits="PerfumeMaster" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>Online Grocery Shop</title>
+    <link rel="Stylesheet" href="Styles/Main.css" />
+    <link rel="Stylesheet" href="Styles/Menu.css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+<body>
+    <form id="formMain" runat="server">
+        <div class="container">
+            <div class="divbody">
+                <div class="header">
+                    <div class="logo">
+                        <a href="Home.aspx">
+                            <img src="Images/GSLogo.jpg" alt="logo" /></a>
+                    </div>
+                    <div style="float: right; margin-right: 5px; margin-top: 2px; width: 680px;">
+                        <div style="float: right; padding-left: 5px;">
+                            <a href="http://www.facebook.com" target="_blank">
+                                <img src="Images/fb.png" alt="fb" /></a>
+                            <a href="http://www.twitter.com" target="_blank">
+                                <img src="Images/twitter.png" alt="twt" /></a>
+                        </div>
+                        <asp:ScriptManager ID="login" runat="server" />
+                        <asp:UpdatePanel ID="upllogin" runat="server" UpdateMode="Conditional">
+                            <ContentTemplate>
+                                <div id="dvsignin" runat="server" style="float: right; margin-top: 4px;" visible="false">
+                                    <label for="loginUname"><b>UserName :</b></label>
+                                    <asp:TextBox ID="loginUname" runat="server" CssClass="logintxtU" placeholder="Enter UserName" />
+                                    <asp:RequiredFieldValidator ID="rvu" runat="server" ErrorMessage="*" ControlToValidate="loginUname" ForeColor="#990000" />
+                                    <label for="Pass"><b>Password :</b></label>
+                                    <asp:TextBox ID="Pass" runat="server" TextMode="Password" CssClass="logintxtU" placeholder="Enter Password" />
+                                    <asp:RequiredFieldValidator ID="rvp" runat="server" ErrorMessage="*" ControlToValidate="Pass" ForeColor="#990000" />
+                                    <asp:Button ID="signin" runat="server" Text="Login" CssClass="button" OnClick="signin_Click" />
+                                    <asp:LinkButton ID="cancel" runat="server" Text="Close" CssClass="cancel" CausesValidation="false" OnClick="cancel_Click" />
+                                </div>
+                                <div id="signini" runat="server" style="float: right; margin-top: 3px;">
+                                    <asp:Button ID="btnsingin" runat="server" Text="Signin" CausesValidation="false" CssClass="signin" OnClick="btnsingin_Click" />
+                                </div>
+                            </ContentTemplate>
+                        </asp:UpdatePanel>
+                    </div>
+
+                    <div class="cartpanel">
+                        <div style="float: right">
+                            <asp:LinkButton ID="ltHi" runat="server" Text="Hi , " Visible="false"/> <asp:LinkButton ID="lbluname" runat="server"></asp:LinkButton>&nbsp;
+                          <asp:LinkButton ID="logout" runat="server" OnClick="logout_Click" CausesValidation="false" Text="Logout" Visible="false"/>&nbsp;&nbsp;
+                            <img src="Images/cart.png" style="width: 20px; height: 20px" id="imgcart" runat="server" />
+                            <asp:LinkButton ID="lbtcart" runat="server"  href="Cart.aspx" >
+                                Cart(<asp:Literal ID="ltitemCount" runat="server" Text="0"/>)
+                            </asp:LinkButton>&nbsp;&nbsp;<asp:LinkButton ID="lbtoredrhistory" runat="server" Text="Order History" OnClick="lbtoredrhistory_Click" Visible="false"/>
+                        </div>
+
+                    </div>
+                </div>
+                <div>
+                    <ul class="menuTemplate4 decor4_1">
+                        <li><a href="Home.aspx">Home</a></li>
+                        <li class="separator"></li>
+                        <li><a href="#" class="arrow">Product</a>
+                            <div class="drop decor4_2" style="width: 150px;">
+                                <div class='left'>
+                                    <b> <a href="Fruits.aspx?C=1">Fruits</a><br />
+                                    <a href="Vegetables.aspx?C=2">Vegetables</a><br />
+                                    </b>
+                                </div>
+                               
+                                <div style='clear: both;'></div>
+                            </div>
+                        </li>
+                        <li class="separator"></li>
+                        <li><a href="AboutUs.aspx">About Us</a></li>
+                        <li class="separator"></li>
+                        <li><a href="Contact.aspx">Contact Us</a></li>
+                        <li class="separator"></li>
+                        <li><a href="Admin/Login.aspx">Admin</a></li>
+                        <li>
+                            <div class="search">
+                                <div style="float: right">
+                                    <asp:Button ID="btnsearch" runat="server" CssClass="btnSearch" Text="Search" OnClick="btnsearch_Click" CausesValidation="false"/>
+                                    <asp:TextBox ID="txtsearch" runat="server" CssClass="txtserach" />
+                                </div>
+
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+                <div id="footer">
+                    <div class="copyright">
+                        <a href="home.html" />
+                    </div>
+                    <div class="footer_links">
+                        <a href="AboutUs.aspx">About us</a> <a href="Contact.aspx">Contact us </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </form>
+</body>
+</html>
